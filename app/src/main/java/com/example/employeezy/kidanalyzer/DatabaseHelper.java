@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "Data.db";
 
     public static final String SCHOOLS_TABLE = "schools_table";
@@ -67,41 +67,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionOne);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionTwo);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionThree);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionFour);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionFive);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionSix);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionSeven);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
 
         values = new ContentValues();
         values.put(QUESTION_TITLE, Questions.questionEight);
         values.put(SCHOOL_ID, i);
+        values.put(COMPLETED, 0);
         db.insert(QUESTION_TABLE, null, values);
     }
 
@@ -121,7 +129,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String QUESTION_TABLE = "question_table";
 
-    public static final String QUESTION_COL_ID = "_question_id";
     public static final String QUESTION_TITLE = "question_title";
     public static final String QUESTION_RATING = "question_rating";
     public static final String QUESTION_NOTES = "question_notes";
@@ -130,12 +137,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public static final String[] QUESTION_COL_NAMES = {QUESTION_COL_ID, QUESTION_TITLE, QUESTION_RATING, QUESTION_NOTES, SCHOOL_ID, COMPLETED};
+    public static final String[] QUESTION_COL_NAMES = {COL_ID, QUESTION_TITLE, QUESTION_RATING, QUESTION_NOTES, SCHOOL_ID, COMPLETED};
 
     private static final String CREATE_QUESTION_TABLE =
             "CREATE TABLE " + QUESTION_TABLE +
                     "(" +
-                    QUESTION_COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     QUESTION_TITLE + " TEXT," +
                     QUESTION_RATING + " REAL," +
                     QUESTION_NOTES + " TEXT," +

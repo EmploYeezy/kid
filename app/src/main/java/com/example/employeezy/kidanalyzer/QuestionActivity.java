@@ -48,11 +48,5 @@ public class QuestionActivity extends AppCompatActivity {
         };
         questionsList.setAdapter(cursorAdapter);
 
-
-
-
-
-
-
     }
 }
