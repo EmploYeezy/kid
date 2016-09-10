@@ -44,6 +44,7 @@ public class QuestionActivity extends AppCompatActivity {
                 CheckBox checkBox = (CheckBox) view.findViewById(R.id.a_question_CB);
                 String questionTitle = cursor.getString(cursor.getColumnIndex(DatabaseHelper.QUESTION_TITLE));
                 checkBox.setText(questionTitle);
+                checkBox.setFocusable(true);
             }
         };
         questionsList.setAdapter(cursorAdapter);

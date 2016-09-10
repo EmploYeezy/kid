@@ -9,4 +9,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.employeezy.kidanalyzer.QuestionDetailActivity">
 
+    <TextView
+
+        android:id="@+id/textViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RatingBar
+        android:id="@+id/ratingDetail"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextDetail"
+        android:layout_below="@+id/ratingDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:imeOptions="actionDone"
+        android:inputType="textAutoCorrect|textCapSentences|textImeMultiLine">
+
+    </EditText>
+
 </RelativeLayout>
