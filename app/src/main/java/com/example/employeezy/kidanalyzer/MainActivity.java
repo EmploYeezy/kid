@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ListView schoolList = (ListView) findViewById(R.id.listOfSchools);
-        cursor = (Cursor) DatabaseHelper.getInstance(MainActivity.this).getSchooList();
+        cursor = DatabaseHelper.getInstance(MainActivity.this).getSchooList();
         setSupportActionBar(toolbar);
 
         final CursorAdapter cursorAdapter = new CursorAdapter(this, cursor, 0) {
@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 rosterPlayerName.setText(playerNamesGetter);
 
                 RatingBar schoolRatingBar = (RatingBar) view.findViewById(R.id.schoolRatingBar);
-                float rookieYearGetter = cursor.getFloat(cursor.getColumnIndex(DatabaseHelper.RATING));
                 schoolRatingBar.setRating(5);
             }
         };
