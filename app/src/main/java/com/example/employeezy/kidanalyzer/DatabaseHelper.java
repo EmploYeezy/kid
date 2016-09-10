@@ -171,9 +171,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         DatabaseUtils.dumpCursor(cursor);
         return cursor;
-
     }
 
+    public void updateCompletedAtId(String id, int completed) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COMPLETED, completed);
+
+        String selection = COL_ID + " = ?";
+
+        String [] selectionArgs = new String[] {
+                id
+        };
+
+        db.update(QUESTION_TABLE, values, selection, selectionArgs);
+    }
 
 }
 
